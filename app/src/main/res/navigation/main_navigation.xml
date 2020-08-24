@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.livecodebank.screen.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.livecodebank.screen.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_transferHistoryFragment"
+            app:destination="@id/transferHistoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_inputRecipientFragment"
+            app:destination="@id/inputRecipientFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputAmountFragment"
+        android:name="com.example.livecodebank.screen.InputAmountFragment"
+        android:label="fragment_input_amount"
+        tools:layout="@layout/fragment_input_amount" >
+        <action
+            android:id="@+id/action_inputAmountFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputRecipientFragment"
+        android:name="com.example.livecodebank.screen.InputRecipientFragment"
+        android:label="fragment_input_recipient"
+        tools:layout="@layout/fragment_input_recipient" >
+        <action
+            android:id="@+id/action_inputRecipientFragment_to_inputAmountFragment"
+            app:destination="@id/inputAmountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.example.livecodebank.screen.ConfirmationFragment"
+        android:label="fragment_confirmation"
+        tools:layout="@layout/fragment_confirmation" >
+        <action
+            android:id="@+id/action_confirmationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transferHistoryFragment"
+        android:name="com.example.livecodebank.screen.TransferHistoryFragment"
+        android:label="fragment_transfer_history"
+        tools:layout="@layout/fragment_transfer_history" />
+</navigation>
