@@ -21,8 +21,8 @@ class TransactionHistoryRecycleAdapter (private val transactionList: List<Transa
     }
 
     override fun onBindViewHolder(holder: TransactionHistoryViewHolder, position: Int) {
-        holder.dateTransaction.text = transactionList[position].trans_date
-        holder.amountTransaction.text = "$" + transactionList[position].amount
+        holder.dateTransaction.text = transactionList[position].created
+        holder.amountTransaction.text = "$" + transactionList[position].nominal
     }
 
 }

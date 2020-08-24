@@ -10,8 +10,8 @@ class TransactionRepository(val transactionAPI: TransactionAPI) {
     var transaction: MutableLiveData<Transaction> = MutableLiveData<Transaction>()
     var allTransaction : MutableLiveData<List<Transaction>> = MutableLiveData<List<Transaction>>()
 
-    fun getAllTransaction(){
-        transactionAPI.getAllTransaction().enqueue(object : Callback<List<Transaction>> {
+    fun getAllTransaction(id:String){
+        transactionAPI.getAllTransaction(id).enqueue(object : Callback<List<Transaction>> {
             override fun onFailure(call: Call<List<Transaction>>, t: Throwable) {
                 println("Failed Because ${t.localizedMessage}")
                 println("${t.printStackTrace()}")

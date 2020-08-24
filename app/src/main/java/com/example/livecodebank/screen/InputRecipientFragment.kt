@@ -38,9 +38,7 @@ class InputRecipientFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View) {
         when(v){
             proccessRecipientButton -> {
-                val bundle = bundleOf("recipientName" to inputRecipient.text.toString(),
-                "bankName" to inputBank.text.toString())
-                Navigation.findNavController(v).navigate(R.id.action_inputRecipientFragment_to_inputAmountFragment, bundle)}
+                Navigation.findNavController(v).navigate(R.id.action_inputRecipientFragment_to_inputAmountFragment)}
         }
     }
 }

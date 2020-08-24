@@ -44,7 +44,7 @@ class TransferHistoryFragment : Fragment() {
             transactionHistoryRecycleAdapter = TransactionHistoryRecycleAdapter(it)
             transferHistoryRecycleView.adapter = transactionHistoryRecycleAdapter
         })
-        transactionViewModel.getAllTransaction()
+        transactionViewModel.getAllTransaction("1")
     }
 
 }

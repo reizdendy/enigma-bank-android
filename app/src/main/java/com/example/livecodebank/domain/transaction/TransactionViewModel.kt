@@ -16,8 +16,8 @@ class TransactionViewModel :ViewModel(){
     val transaction: LiveData<Transaction> = transactionRepository.transaction
     val allTransaction: LiveData<List<Transaction>> = transactionRepository.allTransaction
 
-    fun getAllTransaction(){
-        transactionRepository.getAllTransaction()
+    fun getAllTransaction(id: String){
+        transactionRepository.getAllTransaction(id)
     }
 
     fun saveTransaction(transaction: Transaction) {

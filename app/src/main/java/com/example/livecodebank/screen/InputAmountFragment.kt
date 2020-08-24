@@ -44,23 +44,15 @@ class InputAmountFragment : Fragment(), View.OnClickListener{
         proccessAmountButton.setOnClickListener(this)
     }
 
-    @SuppressLint("NewApi")
     override fun onClick(v: View) {
         when(v){
             proccessAmountButton -> {
 
-                val recipientName = arguments?.getString("recipientName")
-                val bankName = arguments?.getString("bankName")
                 val amount = inputAmount.text.toString()
-                val desc = inputDescription.text.toString()
-                val currentDate = LocalDateTime.now()
+//                val desc = inputDescription.text.toString()
 
-                transactionViewModel.saveTransaction(Transaction(destination = recipientName.toString(),trans_date = currentDate.toString(),amount = amount,description = desc))
+                transactionViewModel.saveTransaction(Transaction(userID = "1" , nominal = amount))
 
-//                val bundle = bundleOf("recipientNameInAmount" to arguments?.getString("recipientName"),
-//                    "bankNameInAmount" to arguments?.getString("bankName"),
-//                    "amount" to inputAmount.text.toString(),
-//                    "description" to inputDescription.text.toString())
                 Navigation.findNavController(v).navigate(R.id.action_inputAmountFragment_to_confirmationFragment)}
         }
     }
